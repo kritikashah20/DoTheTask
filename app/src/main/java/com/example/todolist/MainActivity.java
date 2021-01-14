@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DialogCloseListener {
 
     private RecyclerView tasksRecyclerView;
     private ToDoAdapter tasksAdapter;
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
     public void handleDialogClose(DialogInterface dialog){
         tasklist = db.getAllTasks();
         Collections.reverse(tasklist);
